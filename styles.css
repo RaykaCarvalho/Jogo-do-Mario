@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game{
+    inline-size: 100%;
+    block-size: 100vh;
+    border-block-end: 30px solid green;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+button {
+    background: green;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    padding: 1rem;
+    position: absolute;
+    inset-inline-end: 50vw;
+    inset-block-start: 50vh;
+    cursor: pointer;
+    z-index: 1;
+}
+button:hover {
+    border: 2px solid green;
+    background: none;
+    color: green;
+}
+
+.game-over {
+    inline-size: 100%;
+    block-size: 100vh;
+    background: rgba(0, 0, 0, 0.322);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+}
+.game-over h1 {
+    font-size: 3rem;
+    color: red;
+    text-align: center;
+    margin-block-start: 15rem;
+}
+
+.pipe {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: -80px;
+    inline-size: 80px;
+}
+
+.mario{
+    inline-size: 150px;
+    position: absolute;
+    inset-block-end: 0;
+}
+
+.clouds {
+    inline-size: 550px;
+    position: absolute;
+    inset-block-start: 0;
+    animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes clouds-animation {
+    from {
+        inset-inline-end: -550px;
+    }
+    to {
+        inset-inline-end: 100%;
+    }
+}
+
+.pipe-animation {
+    animation: pipe-animation 2s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from {
+        inset-inline-end: -80px;
+    }
+
+    to {
+        inset-inline-end: 100%;
+    }
+}
+
+.jump {
+    animation: jump 800ms ease-out;
+}
+
+@keyframes jump {
+    0% {
+        inset-block-end:0;
+    }
+
+    40% {
+        inset-block-end: 200px;
+    }
+
+    50% {
+        inset-block-end: 200px;
+    }
+
+    60% {
+        inset-block-end: 200px;
+    }
+
+    100% {
+        inset-block-end: 0;
+    }
+}
